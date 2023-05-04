@@ -24,7 +24,6 @@ from appdirs import AppDirs
 import platform
 import stat
 
-
 EXTRACT_ON_UPDATE = "true"
 FILE_DATE_TO_CHECK = "gk.exe"
 UPDATE_FILE_EXTENTION = ".zip"
@@ -47,7 +46,6 @@ dirs = AppDirs(roaming=True)
 currentOS = platform.system()
 ModFolderPATH = os.path.join(dirs.user_data_dir, "OpenGOAL-Mods", "")
 AppdataPATH = dirs.user_data_dir
-
 
 pbar = None
 
@@ -148,7 +146,6 @@ def openFolder(path):
 
 def reinstall(MOD_ID):
     InstallDir = ModFolderPATH + MOD_ID
-    AppdataPATH = os.getenv("APPDATA")
     UniversalIsoPath = AppdataPATH + "\OpenGOAL\jak1\mods\data\iso_data\iso_data"
     GKCOMMANDLINElist = [
         InstallDir + "\gk.exe",
@@ -259,7 +256,6 @@ def launch(URL, MOD_ID, MOD_NAME, LINK_TYPE):
 
     # paths
     InstallDir = ModFolderPATH + MOD_ID
-    AppdataPATH = os.getenv("APPDATA")
     UniversalIsoPath = AppdataPATH + "\OpenGOAL\jak1\mods\data\iso_data\iso_data"
     GKCOMMANDLINElist = [
         InstallDir + "\gk.exe",
